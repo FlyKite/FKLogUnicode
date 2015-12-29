@@ -9,7 +9,7 @@ Just import these categories into your project, then it will effects.
 
 效果
 ---
-代码
+代码/Code
 ```
   NSDictionary *dict = @{
                         @"作者" : @"FlyKite",
@@ -17,7 +17,7 @@ Just import these categories into your project, then it will effects.
                         };
   NSLog(@"%@", dict);
 ```
-输出
+输出/Output
 ```
 2015-12-29 14:03:40.930 FKLogUnicodeDemo[1635:771643] {
     "作用" = "让NSLog输出字典和数组的时候输出汉字而不是Unicode编码";
