@@ -1,7 +1,7 @@
 //
 //  NSObject+UnicodeTransfer.m
 //  使用NSLog(@"%@", array)将NSDictionary打印出时，中文不再显示乱码（将Unicode编码转为汉字）
-//  ingmeng
+//  FKLogUnicode
 //
 //  Created by 风筝 on 15/12/29.
 //  Copyright © 2015年 Doge Studio. All rights reserved.
