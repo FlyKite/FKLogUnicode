@@ -1,11 +1,11 @@
 # FKLogUnicode
-这些分类能使你的代码在使用NSLog输出字典和数组的时候直接输出中文而不是Unicode编码。  
-These categories will replace unicode to Chinese when you use NSLog(@"%@", dict).
+能让你的代码在使用NSLog输出字典和数组的时候直接输出中文而不是Unicode编码。  
+It will replace unicode to Chinese when you use NSLog(@"%@", dict).
 
 使用指南
 ---
-只需要将这几个分类导入你的项目，不需要再添加任何一行代码即可生效~  
-Just import these categories into your project, then it will effects.
+只需要将FKLogUnicode.m导入你的项目，不需要再添加任何一行代码即可生效~  
+Just import FKLogUnicode.m into your project, then it will effects.
 
 效果
 ---
