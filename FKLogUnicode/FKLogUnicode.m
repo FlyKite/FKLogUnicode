@@ -1,16 +1,21 @@
 //
-//  NSObject+ExchangeMethod.m
-//  面向切面编程（AOP）
-//  FKLogUnicodeDemo
+//  FKLogUnicode.m
+//  控制台中文Log
+//  FKLogUnicode
 //
 //  Created by 风筝 on 15/12/29.
 //  Copyright © 2015年 Doge Studio. All rights reserved.
 //
 
-#import "NSObject+ExchangeSelector.h"
+#import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
 @implementation NSObject (ExchangeSelector)
+/**
+ *  @method aop_ExchangeSelector:andNewSelector:
+ *  交换两个SEL指向的方法的指针
+ *  如：将description与new_description的指针交换之后，执行description方法实际上将会执行自己写的new_description方法
+ */
 + (void)exchangeSelector:(SEL)oldSel andNewSelector:(SEL)newSel {
     Method oldMethod =  class_getInstanceMethod([self class], oldSel);
     Method newMethod  = class_getInstanceMethod([self class], newSel);
@@ -18,6 +23,13 @@
     method_exchangeImplementations(oldMethod, newMethod);
 }
 
+/**
+ *  @method replaceUnicode:
+ *  将字符串中的Unicode编码字符（如\Uxxxx等）转为汉字
+ *
+ *  @param unicodeStr 希望转换的字符串
+ *  @return 将\U转为汉字后的字符串
+ */
 - (NSString *)replaceUnicode:(NSString *)unicodeStr {
     NSData *data = [unicodeStr dataUsingEncoding:NSUTF8StringEncoding];
     const uint8_t *bytes = data.bytes;
@@ -54,5 +66,33 @@
         return byte - 55 + 1;
     }
     return 0;
+}
+@end
+
+@implementation NSDictionary (UnicodeTransfer)
++ (void)load {
+    // 该方法会在加载这个类的时候执行（APP启动时会加载，只执行一次）
+    // 此处交换descriptionWithLocale:与自己写的my_descriptionWithLocale:的方法指针
+    [self exchangeSelector:@selector(descriptionWithLocale:) andNewSelector:@selector(my_descriptionWithLocale:)];
+}
+
+- (NSString *)my_descriptionWithLocale:(id)locale {
+    NSString *desc = [self my_descriptionWithLocale:locale];
+    desc = [self replaceUnicode:desc];
+    return desc;
+}
+@end
+
+@implementation NSArray (UnicodeTransfer)
++ (void)load {
+    // 该方法会在加载这个类的时候执行（APP启动时会加载，只执行一次）
+    // 此处交换descriptionWithLocale:与自己写的my_descriptionWithLocale:的方法指针
+    [self exchangeSelector:@selector(descriptionWithLocale:) andNewSelector:@selector(my_descriptionWithLocale:)];
+}
+
+- (NSString *)my_descriptionWithLocale:(id)locale {
+    NSString *desc = [self my_descriptionWithLocale:locale];
+    desc = [self replaceUnicode:desc];
+    return desc;
 }
 @end

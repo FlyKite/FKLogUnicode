@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C52BDAA1DE6CDEF005B5714 /* FKLogUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C52BDA91DE6CDEF005B5714 /* FKLogUnicode.m */; };
 		A68708B21C325B2A007021A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A68708B11C325B2A007021A8 /* main.m */; };
-		A68708C01C325B71007021A8 /* NSArray+UnicodeTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = A68708BB1C325B71007021A8 /* NSArray+UnicodeTransfer.m */; };
-		A68708C11C325B71007021A8 /* NSDictionary+UnicodeTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = A68708BD1C325B71007021A8 /* NSDictionary+UnicodeTransfer.m */; };
-		A68708C21C325B71007021A8 /* NSObject+ExchangeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A68708BF1C325B71007021A8 /* NSObject+ExchangeSelector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,14 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6C52BDA91DE6CDEF005B5714 /* FKLogUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKLogUnicode.m; path = FKLogUnicode/FKLogUnicode.m; sourceTree = "<group>"; };
 		A68708AE1C325B2A007021A8 /* FKLogUnicodeDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FKLogUnicodeDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68708B11C325B2A007021A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A68708BA1C325B71007021A8 /* NSArray+UnicodeTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+UnicodeTransfer.h"; path = "FKLogUnicode/NSArray+UnicodeTransfer.h"; sourceTree = "<group>"; };
-		A68708BB1C325B71007021A8 /* NSArray+UnicodeTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+UnicodeTransfer.m"; path = "FKLogUnicode/NSArray+UnicodeTransfer.m"; sourceTree = "<group>"; };
-		A68708BC1C325B71007021A8 /* NSDictionary+UnicodeTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+UnicodeTransfer.h"; path = "FKLogUnicode/NSDictionary+UnicodeTransfer.h"; sourceTree = "<group>"; };
-		A68708BD1C325B71007021A8 /* NSDictionary+UnicodeTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+UnicodeTransfer.m"; path = "FKLogUnicode/NSDictionary+UnicodeTransfer.m"; sourceTree = "<group>"; };
-		A68708BE1C325B71007021A8 /* NSObject+ExchangeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ExchangeSelector.h"; path = "FKLogUnicode/NSObject+ExchangeSelector.h"; sourceTree = "<group>"; };
-		A68708BF1C325B71007021A8 /* NSObject+ExchangeSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ExchangeSelector.m"; path = "FKLogUnicode/NSObject+ExchangeSelector.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +68,7 @@
 		A68708B81C325B33007021A8 /* FKLogUnicode */ = {
 			isa = PBXGroup;
 			children = (
-				A68708BA1C325B71007021A8 /* NSArray+UnicodeTransfer.h */,
-				A68708BB1C325B71007021A8 /* NSArray+UnicodeTransfer.m */,
-				A68708BC1C325B71007021A8 /* NSDictionary+UnicodeTransfer.h */,
-				A68708BD1C325B71007021A8 /* NSDictionary+UnicodeTransfer.m */,
-				A68708BE1C325B71007021A8 /* NSObject+ExchangeSelector.h */,
-				A68708BF1C325B71007021A8 /* NSObject+ExchangeSelector.m */,
+				6C52BDA91DE6CDEF005B5714 /* FKLogUnicode.m */,
 			);
 			name = FKLogUnicode;
 			sourceTree = "<group>";
@@ -141,10 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A68708C11C325B71007021A8 /* NSDictionary+UnicodeTransfer.m in Sources */,
-				A68708C21C325B71007021A8 /* NSObject+ExchangeSelector.m in Sources */,
 				A68708B21C325B2A007021A8 /* main.m in Sources */,
-				A68708C01C325B71007021A8 /* NSArray+UnicodeTransfer.m in Sources */,
+				6C52BDAA1DE6CDEF005B5714 /* FKLogUnicode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
