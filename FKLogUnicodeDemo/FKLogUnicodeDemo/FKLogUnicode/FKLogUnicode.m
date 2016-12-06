@@ -17,8 +17,9 @@
  *  如：将description与new_description的指针交换之后，执行description方法实际上将会执行自己写的new_description方法
  */
 + (void)exchangeSelector:(SEL)oldSel andNewSelector:(SEL)newSel {
-    Method oldMethod =  class_getInstanceMethod([self class], oldSel);
-    Method newMethod  = class_getInstanceMethod([self class], newSel);
+    Class cls = [self class];
+    Method oldMethod = class_getInstanceMethod(cls, oldSel);
+    Method newMethod = class_getInstanceMethod(cls, newSel);
     // 改变两个方法的具体指针指向
     method_exchangeImplementations(oldMethod, newMethod);
 }
@@ -74,6 +75,17 @@
     // 该方法会在加载这个类的时候执行（APP启动时会加载，只执行一次）
     // 此处交换descriptionWithLocale:与自己写的my_descriptionWithLocale:的方法指针
     [self exchangeSelector:@selector(descriptionWithLocale:) andNewSelector:@selector(my_descriptionWithLocale:)];
+    if ([self instancesRespondToSelector:@selector(descriptionWithLocale:indent:)]) {
+        [self exchangeSelector:@selector(descriptionWithLocale:indent:) andNewSelector:@selector(my_descriptionWithLocale:indent:)];
+    }
+}
+
+- (NSString *)my_descriptionWithLocale:(id)locale indent:(NSUInteger)level {
+    NSString *desc = [self my_descriptionWithLocale:(id)locale indent:(NSUInteger)level];
+    if (level == 0) {
+        desc = [self replaceUnicode:desc];
+    }
+    return desc;
 }
 
 - (NSString *)my_descriptionWithLocale:(id)locale {
@@ -88,6 +100,17 @@
     // 该方法会在加载这个类的时候执行（APP启动时会加载，只执行一次）
     // 此处交换descriptionWithLocale:与自己写的my_descriptionWithLocale:的方法指针
     [self exchangeSelector:@selector(descriptionWithLocale:) andNewSelector:@selector(my_descriptionWithLocale:)];
+    if ([self instancesRespondToSelector:@selector(descriptionWithLocale:indent:)]) {
+        [self exchangeSelector:@selector(descriptionWithLocale:indent:) andNewSelector:@selector(my_descriptionWithLocale:indent:)];
+    }
+}
+
+- (NSString *)my_descriptionWithLocale:(id)locale indent:(NSUInteger)level {
+    NSString *desc = [self my_descriptionWithLocale:(id)locale indent:(NSUInteger)level];
+    if (level == 0) {
+        desc = [self replaceUnicode:desc];
+    }
+    return desc;
 }
 
 - (NSString *)my_descriptionWithLocale:(id)locale {
