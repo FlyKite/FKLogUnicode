@@ -20,5 +20,5 @@ CocoaPods: `pod 'FKLogUnicode'`
   };
   NSLog(@"%@", dict);
 ```
-输出/Output
+输出/Output  
 ![Preview](https://raw.githubusercontent.com/FlyKite/FKLogUnicode/master/preview.png)
