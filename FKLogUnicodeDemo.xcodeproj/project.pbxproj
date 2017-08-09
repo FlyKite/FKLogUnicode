@@ -24,7 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6C52BDA91DE6CDEF005B5714 /* FKLogUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKLogUnicode.m; path = FKLogUnicode/FKLogUnicode.m; sourceTree = "<group>"; };
+		6C52BDA91DE6CDEF005B5714 /* FKLogUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKLogUnicode.m; sourceTree = "<group>"; };
 		A68708AE1C325B2A007021A8 /* FKLogUnicodeDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FKLogUnicodeDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68708B11C325B2A007021A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +71,7 @@
 				6C52BDA91DE6CDEF005B5714 /* FKLogUnicode.m */,
 			);
 			name = FKLogUnicode;
+			path = ../FKLogUnicode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
