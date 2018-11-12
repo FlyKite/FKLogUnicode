@@ -119,3 +119,28 @@
     return desc;
 }
 @end
+
+@implementation NSSet (UnicodeTransfer)
++ (void)load {
+    // 该方法会在加载这个类的时候执行（APP启动时会加载，只执行一次）
+    // 此处交换descriptionWithLocale:与自己写的my_descriptionWithLocale:的方法指针
+    [self exchangeSelector:@selector(descriptionWithLocale:) andNewSelector:@selector(my_descriptionWithLocale:)];
+    if ([self instancesRespondToSelector:@selector(descriptionWithLocale:indent:)]) {
+        [self exchangeSelector:@selector(descriptionWithLocale:indent:) andNewSelector:@selector(my_descriptionWithLocale:indent:)];
+    }
+}
+
+- (NSString *)my_descriptionWithLocale:(id)locale indent:(NSUInteger)level {
+    NSString *desc = [self my_descriptionWithLocale:(id)locale indent:(NSUInteger)level];
+    if (level == 0) {
+        desc = [self replaceUnicode:desc];
+    }
+    return desc;
+}
+
+- (NSString *)my_descriptionWithLocale:(id)locale {
+    NSString *desc = [self my_descriptionWithLocale:locale];
+    desc = [self replaceUnicode:desc];
+    return desc;
+}
+@end

@@ -12,11 +12,16 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // 只需要将那几个分类导入到项目中即可生效
         // Just import those categories into your project, then it will effects.
+        NSSet *set = [NSSet setWithArray:@[@"元素1", @"元素2", @"元素3"]];
+        NSArray *array = @[@"这是一个字符串", @10086, @{@"emoji": @"支持🤣", @"performance": @"与原生一致的缩进"}];
         NSDictionary *dict = @{
                                @"作者": @"FlyKite",
                                @"作用": @"让NSLog输出字典和数组的时候输出汉字而不是Unicode编码",
-                               @"数组": @[@"这是一个字符串", @10086, @{@"emoji": @"支持🤣", @"performance": @"与原生一致的缩进"}]
+                               @"数组": array,
+                               @"集合": set
                                };
+        NSLog(@"%@", set);
+        NSLog(@"%@", array);
         NSLog(@"%@", dict);
     }
     return 0;
