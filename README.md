@@ -6,19 +6,24 @@ It will replace unicode to Chinese when you use NSLog(@"%@", dict).
 ---
 只需要将FKLogUnicode.m导入你的项目，不需要再添加任何一行代码即可生效~  
 Just import FKLogUnicode.m into your project, then it will effects.  
-  
+
 CocoaPods: `pod 'FKLogUnicode'`
 
 效果/Preview
 ---
 代码/Code
 ```
+  NSSet *set = [NSSet setWithArray:@[@"元素1", @"元素2", @"元素3"]];
+  NSArray *array = @[@"这是一个字符串", @10086, @{@"emoji": @"支持🤣", @"performance": @"与原生一致的缩进"}];
   NSDictionary *dict = @{
                          @"作者": @"FlyKite",
                          @"作用": @"让NSLog输出字典和数组的时候输出汉字而不是Unicode编码",
-                         @"数组": @[@"这是一个字符串", @10086, @{@"emoji": @"支持🤣", @"performance": @"与原生一致的缩进"}]
-  };
+                         @"数组": array,
+                         @"集合": set
+                         };
+  NSLog(@"%@", set);
+  NSLog(@"%@", array);
   NSLog(@"%@", dict);
 ```
 输出/Output  
-![Preview](https://raw.githubusercontent.com/FlyKite/FKLogUnicode/master/preview.png)
+![Preview](https://raw.githubusercontent.com/FlyKite/FKLogUnicode/master/preview_set.png)
